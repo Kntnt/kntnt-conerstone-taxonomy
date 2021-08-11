@@ -6,7 +6,7 @@
  * Plugin Name:       Kntnt Conerstone Taxonomy
  * Plugin URI:        https://www.kntnt.com/
  * Description:       Provides the `conerstone` taxonomy whose terms are used to indicate that a post is related to a cornerstone piece.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Author:            Thomas Barregren
  * Author URI:        https://www.kntnt.com/
  * License:           GPL-3.0+
@@ -45,7 +45,7 @@ class Taxonomy {
 		return [
 
 			// A short descriptive summary of what the taxonomy is for.
-			'description' => _x( 'Taxonomy whose terms are used to indicate that a post is related to a cornerstone piece.', 'Description', 'kntnt-taxonomy-conerstone' ),
+			'description' => _x( 'Cornerstones is a taxonomy used as post metadata. Its terms denote important topics that are the focus of search engine optimization. For these topics there should be cornerstone content pieces linking to posts tagged with corresponding term. These posts should also link back to the cornerstone content pieces, which thereby becomes a topic hub.', 'Description', 'kntnt-taxonomy-conerstone' ),
 
 			// Whether the taxonomy is hierarchical.
 			'hierarchical' => false,
