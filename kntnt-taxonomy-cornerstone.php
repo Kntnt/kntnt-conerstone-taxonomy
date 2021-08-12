@@ -3,10 +3,10 @@
 
 /**
  * @wordpress-plugin
- * Plugin Name:       Kntnt Conerstone Taxonomy
+ * Plugin Name:       Kntnt Cornerstone Taxonomy
  * Plugin URI:        https://www.kntnt.com/
- * Description:       Provides the `conerstone` taxonomy whose terms are used to indicate that a post is related to a cornerstone piece.
- * Version:           1.0.3
+ * Description:       Provides the `cornerstone` taxonomy whose terms are used to indicate that a post is related to a cornerstone piece.
+ * Version:           1.0.4
  * Author:            Thomas Barregren
  * Author URI:        https://www.kntnt.com/
  * License:           GPL-3.0+
@@ -14,7 +14,7 @@
  */
 
 
-namespace Kntnt\Conerstone;
+namespace Kntnt\Cornerstone;
 
 
 defined( 'ABSPATH' ) && new Taxonomy;
@@ -28,8 +28,8 @@ class Taxonomy {
 
 	public function run() {
 
-		$slug = apply_filters( 'kntnt-taxonomy-conerstone-slug', 'conerstone' );
-		$post_types = apply_filters( 'kntnt-taxonomy-conerstone-objects', [ 'post' ] );
+		$slug = apply_filters( 'kntnt-taxonomy-cornerstone-slug', 'cornerstone' );
+		$post_types = apply_filters( 'kntnt-taxonomy-cornerstone-objects', [ 'post' ] );
 
 		register_taxonomy( $slug, null, $this->taxonomy( $slug ) );
 
@@ -45,7 +45,7 @@ class Taxonomy {
 		return [
 
 			// A short descriptive summary of what the taxonomy is for.
-			'description' => _x( 'Cornerstones is a taxonomy used as post metadata. Its terms denote important topics that are the focus of search engine optimization. For these topics there should be cornerstone content pieces linking to posts tagged with corresponding term. These posts should also link back to the cornerstone content pieces, which thereby becomes a topic hub.', 'Description', 'kntnt-taxonomy-conerstone' ),
+			'description' => _x( 'Cornerstones is a taxonomy used as post metadata. Its terms denote important topics that are the focus of search engine optimization. For these topics there should be cornerstone content pieces linking to posts tagged with corresponding term. These posts should also link back to the cornerstone content pieces, which thereby becomes a topic hub.', 'Description', 'kntnt-taxonomy-cornerstone' ),
 
 			// Whether the taxonomy is hierarchical.
 			'hierarchical' => false,
@@ -101,7 +101,7 @@ class Taxonomy {
 			'rewrite' => [
 
 				// Customize the permastruct slug.
-				'slug' => 'conerstone',
+				'slug' => 'cornerstone',
 
 				// Whether the permastruct should be prepended
 				// with WP_Rewrite::$front.
@@ -122,41 +122,41 @@ class Taxonomy {
 
 			// An array of labels for this taxonomy.
 			'labels' => [
-				'name' => _x( 'Conerstones', 'Plural name', 'kntnt-taxonomy-conerstone' ),
-				'singular_name' => _x( 'Conerstone', 'Singular name', 'kntnt-taxonomy-conerstone' ),
-				'search_items' => _x( 'Search conerstones', 'Search items', 'kntnt-taxonomy-conerstone' ),
-				'popular_items' => _x( 'Search conerstones', 'Search items', 'kntnt-taxonomy-conerstone' ),
-				'all_items' => _x( 'All conerstones', 'All items', 'kntnt-taxonomy-conerstone' ),
-				'parent_item' => _x( 'Parent conerstone', 'Parent item', 'kntnt-taxonomy-conerstone' ),
-				'parent_item_colon' => _x( 'Parent conerstone colon', 'Parent item colon', 'kntnt-taxonomy-conerstone' ),
-				'edit_item' => _x( 'Edit conerstone', 'Edit item', 'kntnt-taxonomy-conerstone' ),
-				'view_item' => _x( 'View conerstone', 'View item', 'kntnt-taxonomy-conerstone' ),
-				'update_item' => _x( 'Update conerstone', 'Update item', 'kntnt-taxonomy-conerstone' ),
-				'add_new_item' => _x( 'Add new conerstone', 'Add new item', 'kntnt-taxonomy-conerstone' ),
-				'new_item_name' => _x( 'New conerstone name', 'New item name', 'kntnt-taxonomy-conerstone' ),
-				'separate_items_with_commas' => _x( 'Separate conerstones with commas', 'Separate items with commas', 'kntnt-taxonomy-conerstone' ),
-				'add_or_remove_items' => _x( 'Add or remove conerstones', 'Add or remove items', 'kntnt-taxonomy-conerstone' ),
-				'choose_from_most_used' => _x( 'Choose from most used', 'Choose from most used', 'kntnt-taxonomy-conerstone' ),
-				'not_found' => _x( 'Not found', 'Not found', 'kntnt-taxonomy-conerstone' ),
-				'no_terms' => _x( 'No terms', 'No terms', 'kntnt-taxonomy-conerstone' ),
-				'items_list_navigation' => _x( 'Conerstones list navigation', 'Items list navigation', 'kntnt-taxonomy-conerstone' ),
-				'items_list' => _x( 'Items list', 'Conerstones list', 'kntnt-taxonomy-conerstone' ),
-				'most_used' => _x( 'Most used', 'Most used', 'kntnt-taxonomy-conerstone' ),
-				'back_to_items' => _x( 'Back to conerstones', 'Back to items', 'kntnt-taxonomy-conerstone' ),
+				'name' => _x( 'Cornerstones', 'Plural name', 'kntnt-taxonomy-cornerstone' ),
+				'singular_name' => _x( 'Cornerstone', 'Singular name', 'kntnt-taxonomy-cornerstone' ),
+				'search_items' => _x( 'Search cornerstones', 'Search items', 'kntnt-taxonomy-cornerstone' ),
+				'popular_items' => _x( 'Search cornerstones', 'Search items', 'kntnt-taxonomy-cornerstone' ),
+				'all_items' => _x( 'All cornerstones', 'All items', 'kntnt-taxonomy-cornerstone' ),
+				'parent_item' => _x( 'Parent cornerstone', 'Parent item', 'kntnt-taxonomy-cornerstone' ),
+				'parent_item_colon' => _x( 'Parent cornerstone colon', 'Parent item colon', 'kntnt-taxonomy-cornerstone' ),
+				'edit_item' => _x( 'Edit cornerstone', 'Edit item', 'kntnt-taxonomy-cornerstone' ),
+				'view_item' => _x( 'View cornerstone', 'View item', 'kntnt-taxonomy-cornerstone' ),
+				'update_item' => _x( 'Update cornerstone', 'Update item', 'kntnt-taxonomy-cornerstone' ),
+				'add_new_item' => _x( 'Add new cornerstone', 'Add new item', 'kntnt-taxonomy-cornerstone' ),
+				'new_item_name' => _x( 'New cornerstone name', 'New item name', 'kntnt-taxonomy-cornerstone' ),
+				'separate_items_with_commas' => _x( 'Separate cornerstones with commas', 'Separate items with commas', 'kntnt-taxonomy-cornerstone' ),
+				'add_or_remove_items' => _x( 'Add or remove cornerstones', 'Add or remove items', 'kntnt-taxonomy-cornerstone' ),
+				'choose_from_most_used' => _x( 'Choose from most used', 'Choose from most used', 'kntnt-taxonomy-cornerstone' ),
+				'not_found' => _x( 'Not found', 'Not found', 'kntnt-taxonomy-cornerstone' ),
+				'no_terms' => _x( 'No terms', 'No terms', 'kntnt-taxonomy-cornerstone' ),
+				'items_list_navigation' => _x( 'Cornerstones list navigation', 'Items list navigation', 'kntnt-taxonomy-cornerstone' ),
+				'items_list' => _x( 'Items list', 'Cornerstones list', 'kntnt-taxonomy-cornerstone' ),
+				'most_used' => _x( 'Most used', 'Most used', 'kntnt-taxonomy-cornerstone' ),
+				'back_to_items' => _x( 'Back to cornerstones', 'Back to items', 'kntnt-taxonomy-cornerstone' ),
 			],
 
 		];
 	}
 
 	public function term_updated_messages( $messages ) {
-		$messages['conerstone'] = [
+		$messages['cornerstone'] = [
 			0 => '', // Unused. Messages start at index 1.
-			1 => __( 'Conerstone added.', 'kntnt-taxonomy-conerstone' ),
-			2 => __( 'Conerstone deleted.', 'kntnt-taxonomy-conerstone' ),
-			3 => __( 'Conerstone updated.', 'kntnt-taxonomy-conerstone' ),
-			4 => __( 'Conerstone not added.', 'kntnt-taxonomy-conerstone' ),
-			5 => __( 'Conerstone not updated.', 'kntnt-taxonomy-conerstone' ),
-			6 => __( 'Conerstones deleted.', 'kntnt-taxonomy-conerstone' ),
+			1 => __( 'Cornerstone added.', 'kntnt-taxonomy-cornerstone' ),
+			2 => __( 'Cornerstone deleted.', 'kntnt-taxonomy-cornerstone' ),
+			3 => __( 'Cornerstone updated.', 'kntnt-taxonomy-cornerstone' ),
+			4 => __( 'Cornerstone not added.', 'kntnt-taxonomy-cornerstone' ),
+			5 => __( 'Cornerstone not updated.', 'kntnt-taxonomy-cornerstone' ),
+			6 => __( 'Cornerstones deleted.', 'kntnt-taxonomy-cornerstone' ),
 		];
 		return $messages;
 	}
