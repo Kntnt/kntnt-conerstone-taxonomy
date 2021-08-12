@@ -5,7 +5,7 @@
  * @wordpress-plugin
  * Plugin Name:       Kntnt Topic Taxonomy
  * Plugin URI:        https://www.kntnt.com/
- * Description:       Provides the `topic` taxonomy whose terms are used to indicate that a post is part of a topic hub.
+ * Description:       Provides the `topic` taxonomy whose terms are used to form a topic cluster.
  * Version:           1.0.6
  * Author:            Thomas Barregren
  * Author URI:        https://www.kntnt.com/
