@@ -16,20 +16,19 @@
 
 namespace Kntnt\Topic;
 
-
-defined( 'ABSPATH' ) && new Taxonomy;
+defined( 'ABSPATH' ) && new Taxonomy();
 
 
 class Taxonomy {
 
 	public function __construct() {
-		add_action( 'init', [ $this, 'run' ] );
+		add_action( 'init', array( $this, 'run' ) );
 	}
 
 	public function run() {
 
 		$slug       = apply_filters( 'kntnt_taxonomy_topic_slug', 'topic' );
-		$post_types = apply_filters( 'kntnt_taxonomy_topic_objects', [ 'post' ] );
+		$post_types = apply_filters( 'kntnt_taxonomy_topic_objects', array( 'post' ) );
 
 		register_taxonomy( $slug, null, $this->taxonomy( $slug ) );
 
@@ -37,12 +36,12 @@ class Taxonomy {
 			register_taxonomy_for_object_type( $slug, $post_type );
 		}
 
-		add_filter( 'term_updated_messages', [ $this, 'term_updated_messages' ] );
+		add_filter( 'term_updated_messages', array( $this, 'term_updated_messages' ) );
 
 	}
 
 	private function taxonomy() {
-		return [
+		return array(
 
 			// A short descriptive summary of what the taxonomy is for.
 			'description'        => _x( 'Topics is a taxonomy used as post metadata. Its terms denotes carefully selected topics for which there are a single pages with highly search engine optimized in-depth content on the topic. A such page is known as content hub, pillar content or cornerstone content. All posts that address a topic should link to the cornerstone content of the topic. All posts that also substantially broaden or deepen a topic should be tagged with the topic for cross-referencing. Thus, the cornerstone content and its referenced posts is referred to as a topic cluster.', 'Description', 'kntnt-taxonomy-topic' ),
@@ -83,12 +82,12 @@ class Taxonomy {
 			'meta_box_cb'        => false,
 
 			// Array of capabilities for this taxonomy.
-			'capabilities'       => [
+			'capabilities'       => array(
 				'manage_terms' => 'edit_posts',
 				'edit_terms'   => 'edit_posts',
 				'delete_terms' => 'edit_posts',
 				'assign_terms' => 'edit_posts',
-			],
+			),
 
 			// Sets the query var key for this taxonomy. Default $taxonomy key.
 			// If false, a taxonomy cannot be loaded
@@ -98,7 +97,7 @@ class Taxonomy {
 
 			// Triggers the handling of rewrites for this taxonomy.
 			// Replace the array with false to prevent handling of rewrites.
-			'rewrite'            => [
+			'rewrite'            => array(
 
 				// Customize the permastruct slug.
 				'slug'         => 'topic',
@@ -115,13 +114,13 @@ class Taxonomy {
 				// permalink_epmask is not set, defaults to EP_PERMALINK.
 				'ep_mask'      => null,
 
-			],
+			),
 
 			// Default term to be used for the taxonomy.
 			'default_term'       => null,
 
 			// An array of labels for this taxonomy.
-			'labels'             => [
+			'labels'             => array(
 				'name'                       => _x( 'Topics', 'Plural name', 'kntnt-taxonomy-topic' ),
 				'singular_name'              => _x( 'Topic', 'Singular name', 'kntnt-taxonomy-topic' ),
 				'search_items'               => _x( 'Search topics', 'Search items', 'kntnt-taxonomy-topic' ),
@@ -143,13 +142,13 @@ class Taxonomy {
 				'items_list'                 => _x( 'Items list', 'Topics list', 'kntnt-taxonomy-topic' ),
 				'most_used'                  => _x( 'Most used', 'Most used', 'kntnt-taxonomy-topic' ),
 				'back_to_items'              => _x( 'Back to topics', 'Back to items', 'kntnt-taxonomy-topic' ),
-			],
+			),
 
-		];
+		);
 	}
 
 	public function term_updated_messages( $messages ) {
-		$messages['topic'] = [
+		$messages['topic'] = array(
 			0 => '', // Unused. Messages start at index 1.
 			1 => __( 'Topic added.', 'kntnt-taxonomy-topic' ),
 			2 => __( 'Topic deleted.', 'kntnt-taxonomy-topic' ),
@@ -157,7 +156,7 @@ class Taxonomy {
 			4 => __( 'Topic not added.', 'kntnt-taxonomy-topic' ),
 			5 => __( 'Topic not updated.', 'kntnt-taxonomy-topic' ),
 			6 => __( 'Topics deleted.', 'kntnt-taxonomy-topic' ),
-		];
+		);
 		return $messages;
 	}
 
